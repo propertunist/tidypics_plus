@@ -1,0 +1,215 @@
+.imagebox-popup{
+	#cboxLoadedContent{
+		overflow:initial!important;
+		.tidypics-album-nav{
+			float:left;
+		}
+		.elgg-menu-entity{
+			height:auto;
+		}
+	}
+}
+.image_popup_comment_block{
+	height:100%;
+	> .elgg-image {
+		width: 66%;
+		height:100%;
+		margin-right:0!important;
+		.tidypics-photo-wrapper {
+			.tidypics-photo-block{
+				> a > div {
+					width: 100%;
+					height: 100%!important;
+					max-height: 100%;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: 50%;
+				}
+				height: 73%;
+			}
+			height:100%;
+		}
+	}
+	> .elgg-body {
+		height:100%;
+		width: 33%;
+		float: right;
+		overflow-y: auto !important;
+		overflow-x: hidden !important;
+		.comment_trackerWrapper{
+			max-width: 100%;
+			left:auto!important;
+			margin-left:0px!important;
+		}
+	}
+	.elgg-slick-slider{
+		bottom: 7px;
+		width: 88%;
+		left: 17px;
+		height: 21%;
+		max-height:200px;
+		position: absolute;
+		margin:1%;
+		.slick-next::before, .slick-prev::before {
+			color: #222;
+		}
+		.slick-list{
+			height:100%;
+			.slick-track{
+				height:100%;
+				min-width: 100%;
+				.slick-slide{
+					height:100%;
+					width:auto!important;
+					margin: 0 0.4rem;
+					img {
+						height:100%!important;
+						width:auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+.justified-gallery
+{
+	position: relative;
+  overflow: hidden;
+	> .elgg-item {
+		display: inline-block;
+		overflow: hidden;
+		position: absolute;
+			> a{
+				img {
+				//	position: absolute;
+			//		top: 50%;
+			//		left: 50%;
+					margin: 0;
+					padding: 0;
+					border: none;
+				}
+		}
+	}
+}
+
+.justified-gallery > .elgg-item > .caption {
+  display: none;
+  position: absolute;
+  bottom: 0;
+	background-color: rgb(200,200,200);
+  padding: 5px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+.justified-gallery > .elgg-item > .caption.caption-visible {
+  display: initial;
+  opacity: 0.7;
+  filter: "alpha(opacity=70)";
+  /* IE8 or Earlier */
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+.justified-gallery > .entry-visible {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+  /* IE8 or Earlier */
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+.justified-gallery > .jg-filtered {
+  display: none;
+}
+.justified-gallery > .spinner {
+  position: absolute;
+  bottom: 0;
+  margin-left: -24px;
+  padding: 10px 0 10px 0;
+  left: 50%;
+  opacity: initial;
+  filter: initial;
+  overflow: initial;
+}
+.justified-gallery > .spinner > span {
+  display: inline-block;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* IE8 or Earlier */
+  width: 8px;
+  height: 8px;
+  margin: 0 4px 0 4px;
+  background-color: #000;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+%tidypics_gallery_columns {
+display:flex;
+flex-wrap:wrap;
+width: 98%;
+padding: 1% !important;
+}
+
+%gallery_columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%gallery_items {
+	padding: 0!important;
+	height: auto;
+	width: 30.5%;
+	margin: 0 1%;
+}
+
+.elgg-list {
+    margin: 0!important;
+  }
+.tidypics-album-list {
+    @extend %tidypics_gallery_columns;
+		.elgg-module-tidypics-album, .elgg-module-tidypics-image{
+			width:100%;
+		}
+}
+.elgg-gallery {
+	@extend %gallery_columns;
+	> .elgg-item {
+ 		@extend %gallery_items;
+ 		.elgg-photo{
+ 			margin: 0 !important;
+			width:100%;
+ 		}
+ 	}
+}
+.elgg-content > .elgg-gallery {
+  @extend %gallery_columns;
+}
+
+.elgg-list-entity{
+	.elgg-item:first-of-type{
+	  margin: 0.5em auto;
+	}
+}
+
+@media only screen and(max-width: 575px) {
+	.image_popup_comment_block {
+		> .elgg-image{
+			width: 100%;
+		}
+		> .elgg-body {
+    	width: 100%;
+			height:auto!important;
+			overflow-y:hidden!important;
+		}
+	}
+}

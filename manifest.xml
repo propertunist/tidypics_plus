@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+	<name>Tidypics plus</name>
+  <id>tidypics_plus</id>
+	<author>ura soul</author>
+	<version>2.2</version>
+	<category>enhancement</category>
+	<blurb>adds new style and features to tidypics</blurb>
+	<description>display tidypics albums and images in enhanced ways.</description>
+	<website>https://www.ureka.org/</website>
+	<license>GNU General Public License version 2</license>
+	<requires>
+		<type>elgg_release</type>
+		<version>2.2</version>
+	</requires>
+	  <requires>
+    <type>plugin</type>
+    <name>tidypics</name>
+  </requires>
+  <requires>
+    <type>priority</type>
+    <priority>after</priority>
+    <plugin>tidypics</plugin>
+  </requires>
+  <suggests>
+    <type>plugin</type>
+    <name>elgg_slider</name>
+    <version>>=1.0.0</version>
+  </suggests>
+  <suggests>
+    <type>plugin</type>
+    <name>galliComments</name>
+    <version>>=11</version>
+  </suggests>
+</plugin_manifest>

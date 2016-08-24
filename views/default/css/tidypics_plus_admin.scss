@@ -1,0 +1,22 @@
+/*
+scss file for tidypics_plus theme: admin area
+*/
+/*
+    Created on : 10-Aug-2016, 11:45:20
+    Author     : ura soul
+*/
+
+.tidypics_plus-admin-panel {
+	padding:1.5rem;
+	.elgg-input-text{
+		width: 8rem;
+	}
+	h2 {
+		margin-top: 2rem;
+		margin-bottom: 1.5rem;
+		width: 100%;
+		border-top: 1px solid #777;
+		border-bottom: 1px solid #777;
+		padding: 5px;
+	}
+}
