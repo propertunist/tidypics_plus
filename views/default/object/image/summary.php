@@ -9,12 +9,12 @@
  */
 
 $image = elgg_extract('entity', $vars);
-$icon_options = array(
-	'link_class' => 'elgg-lightbox',
-);
+$icon_options = array();
+
 if ('yes' == elgg_get_plugin_setting('use_popup_lists', 'tidypics_plus'))
 {
 	$icon_options['href'] = 'ajax/view/tidypics/image_popup?guid=' . $image->guid;
+	$icon_options['link_class'] = 'elgg-lightbox';
 	$icon_options['data-colorbox-opts'] = json_encode([
 		'height' => '95%',
 		'width' => '95%',
