@@ -23,3 +23,4 @@ changelog
 2.3 - compatibility for elgg 2.3
 2.3.1 - fixed: tinymce bug in ajax popup
 2.3.2 - fixed: popups not launching due to type in code
+2.3.3 - fixed: compatibility for gallicomments and lightbox errors
