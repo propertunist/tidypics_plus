@@ -41,6 +41,7 @@ define(function(require)
 
         $('.tidypics-gallery').justifiedGallery().on('jg.complete', function (e) {
                $(".tidypics-image-list").css('visibility', 'visible');
+               $(".justified-gallery").css('padding-left', '0%');
         });
     });
 });

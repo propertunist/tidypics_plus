@@ -4,9 +4,12 @@
  * for use in a lightbox
  ***********************/
 
+
+
  $image_guid = (int) get_input('guid');
  if ($image = get_entity($image_guid))
  {
+    elgg_push_context('ajax');
 	 	$album = $image->getContainerEntity();
 
 		$img_src = $image->getIconURL('large');
@@ -111,7 +114,7 @@
 					if (elgg_is_active_plugin('elgg_slider'))
 					{
 						// render popdown gallery icon area
-						$images = $album->getImages();
+						$images = $album->getImages(100);
 						$index = $album->getIndex($image_guid);
 						$slides = array();
 						$count = 1;
@@ -153,7 +156,7 @@
 	  $image_block .= $img;
 	  $image_block .= elgg_view('photos/tagging/tags', $vars);
 		$image_block .= '</div>';
-		error_log($image_gallery);
+		//error_log($image_gallery);
 		$image_block .= $image_gallery;
 		$image_block .= '</div>';
 
@@ -177,6 +180,7 @@
 		echo elgg_view_image_block($image_block, $image_body, array(
 			'class' => 'image_popup_comment_block'
 		));
+    elgg_pop_context();
  }
  else {
  	return false;

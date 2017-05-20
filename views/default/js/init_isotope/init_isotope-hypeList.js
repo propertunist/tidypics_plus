@@ -12,8 +12,8 @@ define(function(require)
     $(document).ready(function()
     {
         imagesLoaded.makeJQueryPlugin( $ );
-        // require jquery-bridget, it's included in isotope.pkgd.js
-        require(['tidypics_plus/jquery-bridget'], function() {
+
+        require(['bridget'], function() {
             document.addEventListener('lazybeforeunveil', function(e){
             $('.tidypics-album-list').isotope('layout');
             });

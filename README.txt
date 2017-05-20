@@ -20,3 +20,6 @@ changelog
 ---------
 2.0 - initial version
 2.2 - compatibility for elgg 2.2
+2.3 - compatibility for elgg 2.3
+2.3.1 - fixed: tinymce bug in ajax popup
+2.3.2 - fixed: popups not launching due to type in code

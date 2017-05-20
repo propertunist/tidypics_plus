@@ -9,18 +9,20 @@
  */
 
 $image = elgg_extract('entity', $vars);
-$icon_options = array();
 
+$icon_options = array(
+	'not_lazy' => true,
+);
 if ('yes' == elgg_get_plugin_setting('use_popup_lists', 'tidypics_plus'))
 {
 	$icon_options['href'] = 'ajax/view/tidypics/image_popup?guid=' . $image->guid;
-	$icon_options['link_class'] = 'elgg-lightbox';
 	$icon_options['data-colorbox-opts'] = json_encode([
 		'height' => '95%',
 		'width' => '95%',
 		'fixed' => true,
 		'className' => 'imagebox-popup imagebox' . $image->guid,
 	]);
+	$icon_options['link_class'] = 'elgg-lightbox';
 }
 else {
 	$icon_options['href'] = $image->getURL();

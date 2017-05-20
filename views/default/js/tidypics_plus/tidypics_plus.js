@@ -5,6 +5,7 @@ define(function(require)
   //  var hypeList = require('hypeList');
     var slick = require('slick');
     var lightbox = require('elgg/lightbox');
+	var EXTENDED_TINYMCE = require('extended_tinymce');
 	// load a new image into the lightbox following a click to a navigate button
     navigateImage = function(fromGuid, toGuid)
     {
@@ -39,11 +40,10 @@ define(function(require)
         $(document).bind('cbox_open', function(){
             // disable main scrollbar for window
             $('body').css('overflow-y', 'hidden');
-            // move lightbox to top of body to allow it to be displayed fixed
-            var imageBox = $(".imagebox-popup").detach();
-            imageBox.prependTo("body");
+
             // scroll to top of comment/info block
             $('.image_popup_comment_block .elgg-body').scrollTop(0);
+
         });
 
         // when a colorbox closes
@@ -52,11 +52,26 @@ define(function(require)
             $('body').css('overflow-y', 'scroll');
         });
 
+        // when a colorbox starts closing
+        $(document).bind('cbox_cleanup', function(){
+            if (window.tinymce) {
+                tinyMCE.remove();
+            }
+        });
+
         // when a colorbox has completed
         $(document).bind('cbox_complete', function(){
             $('.imagebox-popup .elgg-slick-slider').removeClass('elgg-state-loading').slick();
             // connect galliComments to commenting system
-            $('.elgg-form-comment-save, #group-replies').find('input[type=submit]').on('click', elgg.galliComments.submit);
+            if (typeof window.elgg.galliComments !== "undefined")
+            {
+                $('.elgg-form-comment-save, #group-replies').find('input[type=submit]').on('click', elgg.galliComments.submit);
+            }
+            if (typeof window.elgg.au_sets !== "undefined")
+            {
+              // attach pinboards 'pin' action to new list items
+              elgg.au_sets.pinclick();
+            }
         });
 
         // when window is resized

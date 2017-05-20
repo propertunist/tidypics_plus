@@ -18,7 +18,7 @@ function tidypics_plus_init() {
     elgg_register_library('functions', $root . '/lib/functions.php');
     elgg_load_library('functions');
     elgg_register_ajax_view('tidypics/image_popup');
-	elgg_register_page_handler('tidypics_plus_settings', 'tidypics_plus_get_JS_params');
+	  elgg_register_page_handler('tidypics_plus_settings', 'tidypics_plus_get_JS_params');
     elgg_register_css('justified-gallery-on', 'css/justifiedGalleryOn.css');
 
     elgg_define_js('justifiedGallery', [
@@ -41,11 +41,11 @@ function tidypics_plus_init() {
         'deps' => array('jquery'),
         'exports' => 'imagesLoaded',
     ]);
-/*
+
     elgg_define_js('bridget', [
         'src' => 'https://bowercdn.net/c/jquery-bridget-2.0.1/jquery-bridget.js',
         //'src' => elgg_get_simplecache_url('js', 'tidypics_plus/jquery-bridget.js'),
         'deps' => array('jquery'),
         'exports' => 'bridget',
-    ]);*/
+    ]);
 }

@@ -42,12 +42,12 @@ define(function(require)
 
         $('.tidypics-gallery').justifiedGallery().on('jg.complete', function (e) {
                 // recalculate justification when new items loaded - this must go inside the justified gallery complete event to prevent timing glitches
-                $('.tidypics-image-list').hypeList();
-                var instance = $('.tidypics-image-list').data('hypeList');
-                $(instance).on('itemsAdded', function(items,options) {
-                    $('.tidypics-image-list').justifiedGallery('norewind');
+                $('.tidypics-gallery').on('change', function (e, options){
+                    $('.justified-gallery').justifiedGallery('norewind');
                 });
-               $(".tidypics-image-list").css('visibility', 'visible');
+
+               $(".justified-gallery").css('visibility', 'visible');
+               $(".justified-gallery").css('padding-left', '0%');
         });
     });
 });
